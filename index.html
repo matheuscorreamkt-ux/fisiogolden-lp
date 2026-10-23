@@ -1,0 +1,920 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.add('js');</script>
+
+<title>FisioGolden Saúde | Fisioterapia ortopédica e esportiva em Montes Claros</title>
+<meta name="description" content="Dor no joelho, pós-cirurgia ou lesão no esporte? Avaliação individual com o fisioterapeuta Jefferson Lima, em Montes Claros–MG. Agende pelo WhatsApp.">
+
+<!-- PUBLICAÇÃO: trocar "noindex" por "index, follow" quando o cliente aprovar a página -->
+<meta name="robots" content="noindex, nofollow">
+<!-- PUBLICAÇÃO: confirmar o domínio final -->
+<link rel="canonical" href="https://fisogolden.com.br/">
+<meta name="theme-color" content="#12303A">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="FisioGolden Saúde | Fisioterapia ortopédica e esportiva em Montes Claros">
+<meta property="og:description" content="Avaliação individual e plano de tratamento para dor, lesões e reabilitação pós-operatória. Agende pelo WhatsApp.">
+<meta property="og:url" content="https://fisogolden.com.br/">
+<meta property="og:image" content="https://fisogolden.com.br/imgs/og.jpg">
+
+<link rel="icon" type="image/png" href="imgs/favicon.png">
+<link rel="apple-touch-icon" href="imgs/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- RASTREAMENTO: colar aqui o snippet do Google Tag Manager (GTM-XXXXXXX) e o pixel do Meta.
+     Os cliques nos botões já enviam eventos para window.dataLayer (ver script no final). -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Physiotherapy",
+  "name": "FisioGolden Saúde",
+  "url": "https://fisogolden.com.br/",
+  "telephone": "+55-38-99140-8673",
+  "image": "https://fisogolden.com.br/imgs/logo.jpg",
+  "medicalSpecialty": "Physiotherapy",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "R. Joviniano Ramos, 177 - São José",
+    "addressLocality": "Montes Claros",
+    "addressRegion": "MG",
+    "postalCode": "39400-347",
+    "addressCountry": "BR"
+  },
+  "sameAs": ["https://www.instagram.com/fisiogoldensaude/"]
+}
+</script>
+
+<style>
+/* =========================================================
+   DESIGN TOKENS  (o cliente edita cores e fontes aqui)
+   Paleta tirada da logo: azul-petróleo + dourado
+   ========================================================= */
+:root{
+  --ink:#0B1A20;
+  --teal-900:#12303A;
+  --teal-800:#1A404C;
+  --teal-700:#2B5461;
+  --teal-600:#3A6371;       /* texto de destaque sobre fundo claro */
+  --teal-500:#517884;       /* cor da logo */
+  --teal-300:#9DB7BF;
+  --teal-100:#E3ECEE;
+  --gold:#D6B875;           /* dourado da logo */
+  --gold-600:#B8964F;
+  --gold-200:#EBD8AE;
+  --cream:#F7F3EA;
+  --white:#FFFFFF;
+  --text:#22363D;
+  --text-soft:#4A5F67;
+
+  --font-display:"Bricolage Grotesque", system-ui, sans-serif;
+  --font-body:"Manrope", system-ui, sans-serif;
+
+  --radius-s:12px;
+  --radius-m:20px;
+  --radius-l:32px;
+  --shadow-s:0 6px 18px rgba(11,26,32,.07);
+  --shadow-m:0 18px 40px rgba(11,26,32,.12);
+  --shadow-gold:0 12px 30px rgba(214,184,117,.35);
+
+  --gutter:20px;
+  --section-y:96px;
+  --nav-h:72px;
+  --max:1180px;
+}
+@media (max-width:767px){ :root{ --section-y:72px; --nav-h:64px; } }
+
+/* ---------- base ---------- */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--font-body);font-size:17px;line-height:1.6;color:var(--text);background:var(--white);overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3,h4{font-family:var(--font-display);line-height:1.08;margin:0;letter-spacing:-.02em}
+p{margin:0}
+button{font:inherit;color:inherit;cursor:pointer}
+section[id]{scroll-margin-top:calc(var(--nav-h) - 1px)}
+.wrap{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:var(--gutter)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+.ico{width:1.25em;height:1.25em;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* ---------- seções claras / escuras ---------- */
+.sec{padding-block:var(--section-y);position:relative}
+.sec--light{background:var(--white);color:var(--text)}
+.sec--cream{background:var(--cream);color:var(--text)}
+.sec--dark{background:linear-gradient(170deg,var(--teal-900),var(--ink));color:#E6EEF0}
+.sec--dark h2,.sec--dark h3{color:#fff}
+.sec__head{max-width:720px;margin-bottom:48px}
+.sec__head--center{margin-inline:auto;text-align:center}
+.sec__head h2{font-size:clamp(30px,4.4vw,48px);font-weight:700}
+.sec__head p{margin-top:16px;color:var(--text-soft);font-size:18px}
+.sec--dark .sec__head p{color:#B9CBD0}
+.em{color:var(--gold-600)}
+.sec--dark .em,.hero .em{color:var(--gold)}
+
+
+/* ---------- botões ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:14px 28px;border-radius:999px;border:0;font-weight:700;font-size:16px;text-decoration:none;position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s}
+.btn .ico{font-size:20px}
+.btn .ico--fill{fill:currentColor;stroke:none;font-size:22px}
+.btn .ico--go{font-size:18px;opacity:.7;margin-left:-2px;transition:transform .25s,opacity .25s}
+.btn:hover .ico--go{transform:translate(2px,-2px);opacity:1}
+.btn--gold{color:var(--ink);background:linear-gradient(135deg,#E8CF93 0%,var(--gold) 45%,#C9A55C 100%);box-shadow:var(--shadow-gold)}
+.btn--gold::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.55) 50%,transparent 70%);transform:translateX(-120%);animation:shine 4.5s ease-in-out infinite}
+.btn--gold:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(214,184,117,.5)}
+.btn--ghost{color:var(--teal-700);background:transparent;border:1.5px solid var(--teal-500)}
+.btn--ghost:hover{background:var(--teal-100)}
+.btn--lg{min-height:58px;padding:16px 34px;font-size:17px}
+@keyframes shine{0%,55%{transform:translateX(-120%)}85%,100%{transform:translateX(120%)}}
+
+/* ---------- menu fixo ---------- */
+.nav{position:fixed;inset:0 0 auto 0;height:var(--nav-h);z-index:50;transition:background .3s,box-shadow .3s,backdrop-filter .3s}
+.nav.is-solid{background:rgba(11,26,32,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 rgba(214,184,117,.18)}
+.nav__in{height:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{white-space:nowrap;display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff;font-family:var(--font-display);font-weight:700;font-size:18px;letter-spacing:-.01em}
+.brand img{width:42px;height:42px;border-radius:50%;box-shadow:0 0 0 1.5px rgba(214,184,117,.55)}
+.brand small{display:block;font-family:var(--font-body);font-weight:500;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-top:2px}
+.nav__links{display:flex;align-items:center;gap:6px;list-style:none;margin:0;padding:0}
+.nav__links a{display:block;white-space:nowrap;padding:10px 14px;border-radius:999px;color:#D5E1E4;font-size:15px;font-weight:600;text-decoration:none;transition:color .2s,background .2s}
+.nav__links a:hover{color:#fff}
+.nav__links a.is-active{color:var(--ink);background:var(--gold)}
+.nav .btn{min-height:44px;padding:10px 22px;font-size:15px;white-space:nowrap}
+.nav__burger{display:none;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:transparent;color:#fff;place-items:center}
+.nav__burger .ico{font-size:22px}
+@media (max-width:1039px){
+  .nav__links,.nav .btn--nav{display:none}
+  .nav__burger{display:grid}
+  .nav.is-open{background:var(--ink)}
+  .nav.is-open .nav__links{display:flex;flex-direction:column;align-items:stretch;position:absolute;top:var(--nav-h);left:0;right:0;background:var(--ink);padding:12px var(--gutter) 24px;gap:2px;border-bottom:1px solid rgba(214,184,117,.25)}
+  .nav.is-open .nav__links a{padding:14px 12px;font-size:17px;border-radius:12px}
+}
+
+/* ---------- 1. HERO ---------- */
+.hero{position:relative;color:#fff;padding-top:calc(var(--nav-h) + 40px);padding-bottom:80px;overflow:hidden;
+  background:
+   radial-gradient(60% 55% at 82% 18%, rgba(214,184,117,.20), transparent 62%),
+   radial-gradient(55% 60% at 8% 92%, rgba(81,120,132,.50), transparent 62%),
+   linear-gradient(160deg,#0B1A20 0%,#12303A 55%,#1A404C 100%)}
+.hero__waves{position:absolute;inset:auto 0 0 0;height:46%;pointer-events:none;opacity:.9}
+.hero__waves path{fill:none;stroke:var(--gold);stroke-width:1.4;stroke-linecap:round;stroke-dasharray:6 14}
+.hero__waves .w1{opacity:.35;animation:dash 26s linear infinite}
+.hero__waves .w2{opacity:.22;animation:dash 38s linear infinite reverse}
+.hero__waves .w3{opacity:.14;animation:dash 52s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-600}}
+.hero__grid{position:relative;display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:56px}
+.pill{display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 10px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(214,184,117,.35);font-size:13.5px;font-weight:600;color:#E8D9B5}
+.pill .dot{width:22px;height:22px;border-radius:50%;background:var(--gold);color:var(--ink);display:grid;place-items:center;font-size:13px}
+.hero h1{font-size:clamp(33px,4.4vw,54px);font-weight:800;margin-top:22px;letter-spacing:-.03em}
+.hero__lead{margin-top:22px;font-size:19px;color:#C6D6DA;max-width:540px}
+.hero__cta{margin-top:34px;display:flex;flex-wrap:wrap;align-items:center;gap:18px}
+.hero__note{font-size:14px;color:#9FB6BC;display:flex;align-items:center;gap:8px}
+
+.hero__visual{position:relative;max-width:470px;width:100%;justify-self:center}
+.photo{position:relative;margin:0;aspect-ratio:4/5;border-radius:999px 999px var(--radius-l) var(--radius-l);overflow:hidden;background:linear-gradient(180deg,var(--teal-700),var(--teal-900));box-shadow:0 30px 60px rgba(0,0,0,.35)}
+.photo img{width:100%;height:100%;object-fit:cover}
+.photo.is-empty{display:grid;place-items:center;align-content:center;gap:14px;text-align:center;padding:24px}
+.photo.is-empty .slot-label{position:static;transform:none}
+.photo .mark{display:none}
+.photo.is-empty .mark{display:block;width:62%;height:auto;color:var(--gold);opacity:.9}
+.slot-label{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);width:max-content;max-width:86%;padding:6px 12px;border-radius:999px;background:rgba(0,0,0,.45);color:#F6E7BD;font-size:12px;font-weight:700;letter-spacing:.04em}
+.photo:not(.is-empty) .slot-label{display:none}
+.hero__visual::before{content:"";position:absolute;inset:-14px -14px auto auto;width:78%;height:78%;border:1.5px solid rgba(214,184,117,.45);border-radius:999px 999px var(--radius-l) var(--radius-l);z-index:-1;transform:rotate(4deg)}
+.ring{position:absolute;left:-46px;bottom:68px;width:132px;height:132px;border-radius:50%;background:var(--gold);color:var(--ink);display:grid;place-items:center;box-shadow:var(--shadow-gold)}
+.ring svg.ring__text{position:absolute;inset:0;width:100%;height:100%;animation:spin 22s linear infinite}
+.ring text{font-family:var(--font-body);font-size:10.6px;font-weight:800;letter-spacing:.17em;fill:var(--ink)}
+.ring .ico{font-size:34px;stroke-width:1.6}
+@keyframes spin{to{transform:rotate(360deg)}}
+.chip{position:absolute;display:flex;align-items:center;gap:10px;padding:10px 16px;border-radius:16px;background:rgba(255,255,255,.96);color:var(--ink);box-shadow:var(--shadow-m);font-size:13.5px;font-weight:700;line-height:1.25;animation:float 6s ease-in-out infinite}
+.chip small{display:block;font-weight:600;color:var(--text-soft);font-size:12px}
+.chip .ico{color:var(--gold-600);font-size:22px}
+.chip--a{top:36px;right:-30px}
+.chip--b{bottom:30px;right:-18px;animation-delay:-3s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+@media (max-width:959px){
+  .hero{padding-top:calc(var(--nav-h) + 36px);padding-bottom:64px}
+  .hero__grid{grid-template-columns:1fr;gap:56px}
+  .hero__visual{max-width:360px}
+  .ring{left:-14px;width:108px;height:108px;bottom:56px}
+  .ring text{font-size:10.6px}
+  .chip--a{right:-10px}.chip--b{right:-6px}
+}
+@media (max-width:420px){ .hero__cta .btn{width:100%} }
+
+/* faixa de prova social (não conta como seção) */
+.strip{background:var(--gold);color:var(--ink);overflow:hidden;border-block:1px solid rgba(11,26,32,.15)}
+.strip__track{display:flex;width:max-content;animation:marquee 38s linear infinite}
+.strip:hover .strip__track{animation-play-state:paused}
+.strip__item{display:flex;align-items:center;gap:14px;padding:16px 26px;font-family:var(--font-display);font-weight:700;font-size:16px;white-space:nowrap}
+.strip__item .ico{font-size:18px;color:var(--teal-800)}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* ---------- cards (claro) ---------- */
+.grid{display:grid;gap:22px}
+.grid--3{grid-template-columns:repeat(3,1fr)}
+.grid--2{grid-template-columns:repeat(2,1fr)}
+@media (max-width:959px){.grid--3{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.grid--3,.grid--2{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--teal-100);border-radius:var(--radius-m);padding:28px;box-shadow:var(--shadow-s);transition:transform .3s,box-shadow .3s,border-color .3s}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-m);border-color:var(--gold)}
+.card__ico{width:52px;height:52px;border-radius:50%;background:var(--teal-100);color:var(--teal-700);display:grid;place-items:center;font-size:24px;margin-bottom:18px;transition:background .3s,color .3s}
+.card:hover .card__ico{background:var(--teal-800);color:var(--gold)}
+.card h3{font-size:20px;font-weight:700;margin-bottom:8px;color:var(--teal-900)}
+.card p{color:var(--text-soft);font-size:16px}
+
+/* ---------- 2. IDENTIFICAÇÃO ---------- */
+.voices{margin-top:44px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.voice{padding:10px 18px;border-radius:999px;background:var(--cream);border:1px dashed var(--gold-600);font-family:var(--font-display);font-weight:600;font-size:16px;color:var(--teal-800);animation:float 7s ease-in-out infinite}
+.voice:nth-child(2){animation-delay:-1.5s}.voice:nth-child(3){animation-delay:-3s}.voice:nth-child(4){animation-delay:-4.5s}.voice:nth-child(5){animation-delay:-6s}
+.closing{margin-top:44px;text-align:center}
+.closing p{font-family:var(--font-display);font-size:clamp(22px,3vw,30px);font-weight:600;color:var(--teal-900);max-width:640px;margin:0 auto 26px;letter-spacing:-.015em}
+
+/* ---------- 3. COMO FUNCIONA ---------- */
+.steps{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:s}
+.steps::before{content:"";position:absolute;top:34px;left:6%;right:6%;height:2px;background:linear-gradient(90deg,transparent,rgba(214,184,117,.55),transparent);background-size:200% 100%;animation:sweep 5s linear infinite}
+@keyframes sweep{to{background-position:-200% 0}}
+.step{position:relative;padding:26px 24px 28px;border-radius:var(--radius-m);background:rgba(255,255,255,.04);border:1px solid rgba(214,184,117,.2)}
+.step__n{width:68px;height:68px;border-radius:50%;background:var(--ink);border:1.5px solid var(--gold);color:var(--gold);display:grid;place-items:center;font-family:var(--font-display);font-weight:800;font-size:24px;margin:-58px 0 18px;position:relative;z-index:1}
+.step h3{font-size:20px;margin-bottom:8px}
+.step p{color:#B9CBD0;font-size:16px}
+.note{margin-top:44px;display:flex;gap:16px;align-items:center;padding:22px 26px;border-radius:var(--radius-m);background:rgba(214,184,117,.1);border:1px solid rgba(214,184,117,.35);color:#EFE4C6;font-size:17px;font-weight:500}
+.note .ico{font-size:30px;color:var(--gold)}
+@media (max-width:959px){
+  .steps{grid-template-columns:1fr;gap:34px;padding-left:34px}
+  .steps::before{top:0;bottom:0;left:0;right:auto;width:2px;height:auto;background:linear-gradient(180deg,transparent,rgba(214,184,117,.55),transparent)}
+  .step__n{margin:-40px 0 14px -68px;width:54px;height:54px;font-size:20px}
+}
+
+/* ---------- 4. TRATAMENTOS ---------- */
+.treat{display:grid;grid-template-columns:1.1fr 1fr;gap:22px}
+.feature{position:relative;border-radius:var(--radius-l);padding:40px;color:#fff;overflow:hidden;background:linear-gradient(150deg,var(--teal-700),var(--teal-900));display:flex;flex-direction:column;justify-content:flex-end;min-height:420px}
+.feature::after{content:"";position:absolute;right:-90px;top:-90px;width:300px;height:300px;border-radius:50%;border:1.5px solid rgba(214,184,117,.35);box-shadow:0 0 0 38px rgba(214,184,117,.06),0 0 0 80px rgba(214,184,117,.04)}
+.feature h3{font-size:clamp(28px,3.4vw,38px);margin-bottom:14px;position:relative;z-index:1}
+.feature p{color:#C6D6DA;max-width:440px;position:relative;z-index:1}
+.feature ul{list-style:none;padding:0;margin:20px 0 28px;display:flex;flex-wrap:wrap;gap:10px;position:relative;z-index:1}
+.feature li{padding:7px 14px;border-radius:999px;border:1px solid rgba(214,184,117,.5);color:var(--gold-200);font-weight:600;font-size:14.5px}
+.feature .btn{align-self:flex-start;position:relative;z-index:1}
+.treat__list{display:grid;gap:18px;grid-template-columns:1fr 1fr}
+.treat__list .card{padding:24px}
+.treat__list .card h3{font-size:18px}
+.treat__list .card p{font-size:15px}
+@media (max-width:959px){.treat{grid-template-columns:1fr}.feature{min-height:0;padding:32px 26px}}
+@media (max-width:540px){.treat__list{grid-template-columns:1fr}}
+
+/* ---------- 5. DEPOIMENTOS (carrossel infinito) ---------- */
+.rating{display:inline-flex;align-items:center;gap:14px;margin-top:22px;padding:10px 22px 10px 14px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(214,184,117,.3)}
+.rating strong{font-family:var(--font-display);font-size:28px;color:#fff;line-height:1}
+.stars{display:flex;gap:2px;color:var(--gold)}
+.stars .ico{fill:currentColor;stroke:none;font-size:18px}
+.rating small{color:#B9CBD0;font-size:14px;font-weight:600}
+.car{position:relative;margin-top:44px}
+.car__view{overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;cursor:grab;-webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);padding-block:26px;touch-action:pan-y pinch-zoom}
+.car__view::-webkit-scrollbar{display:none}
+.car__view.is-drag{cursor:grabbing;user-select:none}
+.car__track{display:flex;gap:22px;width:max-content;padding-inline:22px}
+.rcard{flex:none;width:340px;min-height:250px;text-align:left;border:0;border-radius:var(--radius-m);padding:28px;background:linear-gradient(160deg,#EBD8AE,var(--gold));color:var(--ink);display:flex;flex-direction:column;gap:14px;box-shadow:0 14px 30px rgba(0,0,0,.28);opacity:.82;transform:scale(.95);transition:transform .45s,opacity .45s}
+.rcard.is-center{opacity:1;transform:scale(1.04)}
+.rcard .stars{color:var(--teal-900)}
+.rcard p{font-size:16.5px;font-weight:500;line-height:1.55;flex:1}
+.rcard footer{display:flex;align-items:center;gap:12px;font-weight:700;font-size:15px}
+.rcard footer span{width:38px;height:38px;border-radius:50%;background:var(--teal-900);color:var(--gold);display:grid;place-items:center;font-family:var(--font-display);font-size:16px}
+.rcard footer small{display:block;font-weight:600;font-size:12.5px;color:rgba(11,26,32,.65)}
+@media (max-width:540px){.rcard{width:290px}}
+.car__ctrl{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:8px}
+.car__btn{width:48px;height:48px;border-radius:50%;border:1.5px solid rgba(214,184,117,.6);background:transparent;color:var(--gold);display:grid;place-items:center;transition:background .2s,color .2s}
+.car__btn:hover{background:var(--gold);color:var(--ink)}
+.car__btn .ico{font-size:22px}
+.car__btn--prev .ico{transform:rotate(180deg)}
+.disclaimer{margin-top:30px;text-align:center;font-size:14px;color:#9FB6BC;max-width:640px;margin-inline:auto}
+.disclaimer a{color:var(--gold);font-weight:600;display:inline-flex;align-items:center;min-height:44px}
+dialog.lightbox{border:0;border-radius:var(--radius-l);padding:0;max-width:min(560px,92vw);width:100%;background:var(--cream);color:var(--ink);box-shadow:0 40px 90px rgba(0,0,0,.5)}
+dialog.lightbox::backdrop{background:rgba(5,14,18,.78);backdrop-filter:blur(4px)}
+.lightbox__in{padding:40px 36px 34px}
+.lightbox__in img{border-radius:var(--radius-m);margin-bottom:18px}
+.lightbox__in p{font-family:var(--font-display);font-size:22px;line-height:1.35;font-weight:600;color:var(--teal-900);margin:14px 0 20px}
+.lightbox__x{position:absolute;top:12px;right:12px;width:44px;height:44px;border-radius:50%;border:0;background:var(--teal-900);color:var(--gold);display:grid;place-items:center}
+
+/* ---------- 6. SOBRE ---------- */
+.about{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:center}
+.about .photo{max-width:430px;margin-inline:auto;box-shadow:0 26px 54px rgba(18,48,58,.25)}
+.about h2{font-size:clamp(30px,4.2vw,46px);margin:0 0 10px;color:var(--teal-900)}
+.about__role{font-weight:700;color:var(--teal-600);font-size:15px;letter-spacing:.04em}
+.about p{margin-top:16px;font-size:18px;color:var(--text-soft);max-width:560px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:30px 0}
+.fact{padding:18px 16px;border-radius:var(--radius-m);background:var(--teal-100);text-align:center}
+.fact strong{display:block;font-family:var(--font-display);font-size:32px;color:var(--teal-800);line-height:1.1}
+.fact span{font-size:13.5px;font-weight:600;color:var(--teal-600);line-height:1.3;display:block;margin-top:4px}
+@media (max-width:959px){.about{grid-template-columns:1fr;gap:44px}}
+@media (max-width:480px){.facts{grid-template-columns:1fr}}
+
+/* ---------- 7. DIFERENCIAIS ---------- */
+.diff{counter-reset:d}
+.diff .card{background:rgba(255,255,255,.04);border-color:rgba(214,184,117,.2);box-shadow:none;position:relative;padding:32px}
+.diff .card h3{color:#fff}
+.diff .card p{color:#B9CBD0}
+.diff .card__ico{background:rgba(214,184,117,.14);color:var(--gold)}
+.diff .card:hover{background:rgba(255,255,255,.07)}
+.diff .card::after{counter-increment:d;content:"0" counter(d);position:absolute;top:24px;right:28px;font-family:var(--font-display);font-weight:800;font-size:44px;color:transparent;-webkit-text-stroke:1px rgba(214,184,117,.35)}
+
+/* ---------- 8. LOCALIZAÇÃO ---------- */
+.where{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:stretch}
+.info{background:var(--cream);border-radius:var(--radius-l);padding:38px;display:flex;flex-direction:column;gap:22px}
+.info__row{display:flex;gap:16px}
+.info__row .card__ico{margin:0;flex:none;background:#fff}
+.info__row h3{font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-600);margin-bottom:4px;font-family:var(--font-body);font-weight:700}
+.info__row p{font-size:17px;color:var(--text);font-weight:500}
+.info__row a{color:var(--teal-800);font-weight:700;display:inline-flex;align-items:center;min-height:44px}
+.info__btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+.map{border-radius:var(--radius-l);overflow:hidden;min-height:380px;background:var(--teal-100);box-shadow:var(--shadow-m)}
+.map iframe{border:0;width:100%;height:100%;min-height:380px;display:block}
+@media (max-width:959px){.where{grid-template-columns:1fr}.info{padding:28px 24px}}
+
+/* ---------- 9. CTA FINAL ---------- */
+.final{text-align:center;overflow:hidden;background:
+  radial-gradient(50% 70% at 50% 0%,rgba(214,184,117,.2),transparent 65%),
+  linear-gradient(170deg,var(--teal-800),var(--ink))}
+.final .mark-bg{position:absolute;left:50%;top:50%;width:min(760px,120vw);transform:translate(-50%,-50%);color:var(--gold);opacity:.07;pointer-events:none;animation:drift 12s ease-in-out infinite}
+@keyframes drift{0%,100%{transform:translate(-50%,-50%) translateX(-14px)}50%{transform:translate(-50%,-50%) translateX(14px)}}
+.final .wrap{position:relative}
+.final h2{font-size:clamp(32px,5vw,54px);font-weight:800;margin:0 auto 18px;max-width:780px}
+.final__lead{max-width:600px;margin:0 auto;color:#C6D6DA;font-size:19px}
+.include{list-style:none;margin:34px auto 38px;padding:0;display:grid;gap:12px;max-width:520px;text-align:left}
+.include li{display:flex;gap:12px;align-items:flex-start;padding:16px 20px;border-radius:var(--radius-m);background:rgba(255,255,255,.06);border:1px solid rgba(214,184,117,.25);font-weight:600;color:#fff;font-size:16.5px}
+.include .ico{color:var(--gold);font-size:22px}
+.final .hero__note{justify-content:center;margin-top:18px}
+
+/* ---------- 10. FAQ ---------- */
+.faq{max-width:820px;margin-inline:auto;display:grid;gap:12px}
+.faq details{background:#fff;border:1px solid var(--teal-100);border-radius:var(--radius-m);transition:border-color .25s,box-shadow .25s}
+.faq details[open]{border-color:var(--gold);box-shadow:var(--shadow-s)}
+.faq summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 24px;min-height:64px;cursor:pointer;font-family:var(--font-display);font-weight:600;font-size:18px;color:var(--teal-900)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .ico{font-size:22px;color:var(--gold-600);transition:transform .3s}
+.faq details[open] summary .ico{transform:rotate(45deg)}
+.faq details p{padding:0 24px 22px;color:var(--text-soft);font-size:16.5px;animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(-6px)}}
+
+/* ---------- rodapé ---------- */
+.foot{background:var(--ink);color:#9FB6BC;padding:56px 0 110px;font-size:14.5px}
+.foot__top{display:flex;flex-wrap:wrap;gap:32px;justify-content:space-between;align-items:flex-start;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.1)}
+.foot a{color:#D5E1E4;text-decoration:none}
+.foot__links a{display:inline-flex;align-items:center;min-height:44px}
+.foot a:hover{color:var(--gold)}
+.foot__links{display:flex;flex-direction:column;gap:10px}
+.foot__legal{padding-top:26px;display:grid;gap:10px;max-width:880px}
+@media (min-width:768px){.foot{padding-bottom:56px}}
+
+/* ---------- barra fixa (celular) ---------- */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:40;padding:10px var(--gutter) calc(10px + env(safe-area-inset-bottom));background:rgba(11,26,32,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid rgba(214,184,117,.3);transform:translateY(110%);transition:transform .35s}
+.sticky.is-on{transform:none}
+.sticky .btn{width:100%}
+@media (min-width:768px){.sticky{display:none}}
+
+/* ---------- entrada ao rolar ---------- */
+.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.js .reveal.in{opacity:1;transform:none}
+/* primeira dobra: entra por animação ao carregar, sem depender do scroll */
+.js .hero .reveal{opacity:1;transform:none;transition:none;animation:rise .9s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--d,0s)}
+@keyframes rise{from{opacity:0;transform:translateY(26px)}}
+
+/* ---------- movimento reduzido ---------- */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .reveal{opacity:1;transform:none}
+  .strip__track{width:auto;flex-wrap:wrap;justify-content:center}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ============ SPRITE DE ÍCONES (traço 1.5px) ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7"/></symbol>
+    <symbol id="i-pulse" viewBox="0 0 24 24"><path d="M3 12h4l2.2-6 4.6 12 2.2-6H21"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7.5 3v5.5c0 4.4-3.1 8-7.5 9.5-4.4-1.5-7.5-5.1-7.5-9.5V6L12 3z"/><path d="M8.8 12l2.2 2.2 4.2-4.4"/></symbol>
+    <symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="5" y="4.5" width="14" height="16.5" rx="2.5"/><path d="M9 4.5V3.5h6v1M8.5 11h7M8.5 15h4.5"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".8"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6 7-11.2A7 7 0 005 9.8C5 15 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.4"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.2l2.7 5.6 6.1.8-4.5 4.2 1.1 6.1L12 17l-5.4 2.9 1.1-6.1L3.2 9.6l6.1-.8L12 3.2z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v4.5A1.5 1.5 0 0116.5 20h-11A1.5 1.5 0 014 18.5v-11A1.5 1.5 0 015.5 6H10"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h3.5l1.7 4.3-2.2 1.4a11 11 0 005 5l1.4-2.2L19 14.2V18a2 2 0 01-2 2A13 13 0 013 6a2 2 0 012-2z"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M20.5 11.5A8 8 0 019.6 19L4 20.5 5.4 15.8A8 8 0 1120.5 11.5z"/></symbol>
+    <symbol id="i-knee" viewBox="0 0 24 24"><path d="M8 3.5v5.2c0 1.4-.6 2.1-1.4 3.3M8 20.5v-3c0-1.2-.5-2-1.4-3M16 3.5v4.2c0 1.5.8 2.4 1.6 3.3M16 20.5v-4.4c0-1.3-.7-2.1-1.6-3.1"/><circle cx="12" cy="12" r="2.2"/></symbol>
+    <symbol id="i-shoulder" viewBox="0 0 24 24"><circle cx="12" cy="6.5" r="2.7"/><path d="M4.5 20c.4-4.5 3.4-7.3 7.5-7.3s7.1 2.8 7.5 7.3M8 14.5L5 19"/></symbol>
+    <symbol id="i-run" viewBox="0 0 24 24"><circle cx="14.5" cy="4.8" r="2"/><path d="M8.5 21l3-5.5 3 1.8 1.5-4.3-3-2.2-2.7 2.2-3.3-.7M12.7 11l3.8 1.6 2.4-2.6"/></symbol>
+    <symbol id="i-cross" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><path d="M12 8v8M8 12h8"/></symbol>
+    <symbol id="i-bone" viewBox="0 0 24 24"><path d="M7.2 4.2a2.4 2.4 0 00-3.6 3 2.4 2.4 0 003 3.6L13 17.2a2.4 2.4 0 003.6 3 2.4 2.4 0 003-3.6 2.4 2.4 0 00-3-3.6L10.8 6.8A2.4 2.4 0 007.2 4.2z"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5C4 4.7 4.7 4 5.5 4H11v15.5H5.5A1.5 1.5 0 014 18V5.5zM20 5.5c0-.8-.7-1.5-1.5-1.5H13v15.5h5.5A1.5 1.5 0 0020 18V5.5z"/></symbol>
+    <symbol id="i-dumbbell" viewBox="0 0 24 24"><path d="M6.5 7.5v9M17.5 7.5v9M3.5 10v4M20.5 10v4M6.5 12h11"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.5-7.5-10.2A4.3 4.3 0 0112 7.3a4.3 4.3 0 017.5 2.5C19.5 15.5 12 20 12 20z"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-arrow-ur" viewBox="0 0 24 24"><path d="M7 17L17 7M8.5 7H17v8.5"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+    <symbol id="i-insta" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r=".6"/></symbol>
+    <symbol id="i-question" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M9.6 9.6a2.5 2.5 0 114 2c-.9.6-1.6 1-1.6 2.1M12 16.6v.1"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="3.6"/><path d="M5 20c.6-3.7 3.4-5.8 7-5.8s6.4 2.1 7 5.8"/></symbol>
+
+    <!-- marca (onda + cabeça), leitura simplificada da logo -->
+    <symbol id="mark" viewBox="0 0 140 90">
+      <circle cx="68" cy="14" r="9" fill="currentColor" stroke="none"/>
+      <path d="M8 46c11-7 20-1 28 9 9 11 20 11 29-1 8-11 16-27 33-23 11 3 15 15 26 24" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="butt" stroke-linejoin="round" transform="translate(0 8)"/>
+    </symbol>
+  </defs>
+</svg>
+
+<a class="sr-only" href="#inicio">Ir para o conteúdo</a>
+
+<!-- ============ MENU FIXO ============ -->
+<header class="nav" id="nav">
+  <div class="wrap nav__in">
+    <a class="brand" href="#inicio" aria-label="FisioGolden Saúde, voltar ao topo">
+      <img src="imgs/logo.jpg" width="42" height="42" alt="">
+      <span>FisioGolden<small>Fisioterapia · Montes Claros</small></span>
+    </a>
+    <ul class="nav__links" id="navlinks">
+      <li><a href="#como-funciona">Como funciona</a></li>
+      <li><a href="#tratamentos">Tratamentos</a></li>
+      <li><a href="#depoimentos">Avaliações</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#localizacao">Contato</a></li>
+    </ul>
+    <a class="btn btn--gold btn--nav" data-cta="cta_nav" target="_blank" rel="noopener noreferrer"
+       href="https://wa.me/5538991408673?text=Ol%C3%A1!%20Vi%20a%20p%C3%A1gina%20da%20FisioGolden%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o."><svg class="ico ico--fill" aria-hidden="true"><use href="#i-wa"/></svg>Agendar avaliação<svg class="ico ico--go" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
+    <button class="nav__burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="navlinks">
+      <svg class="ico"><use href="#i-menu"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="inicio">
+
+<!-- ============ 1. PRIMEIRA DOBRA ============ -->
+<section class="hero" aria-labelledby="h1">
+  <svg class="hero__waves" viewBox="0 0 1440 420" preserveAspectRatio="none" aria-hidden="true">
+    <path class="w1" d="M0 300C180 220 300 380 520 300S860 160 1060 260 1330 330 1440 250"/>
+    <path class="w2" d="M0 340C200 280 340 400 560 340S900 220 1100 310 1340 370 1440 300"/>
+    <path class="w3" d="M0 250C160 170 330 330 540 240S880 110 1080 200 1340 290 1440 190"/>
+  </svg>
+
+  <div class="wrap hero__grid">
+    <div>
+      <span class="pill reveal"><span class="dot"><svg class="ico"><use href="#i-pin"/></svg></span>Fisioterapia ortopédica e esportiva · Montes Claros–MG</span>
+      <h1 id="h1" class="reveal" style="--d:.08s">Dor no joelho, pós-cirurgia ou lesão? <span class="em">Recupere seus movimentos</span> com acompanhamento individual.</h1>
+      <p class="hero__lead reveal" style="--d:.16s">Avaliação com o fisioterapeuta Jefferson Lima e um plano de tratamento feito para a sua rotina e o seu objetivo.</p>
+
+      <div class="hero__cta reveal" style="--d:.32s">
+        <a class="btn btn--gold btn--lg" data-cta="cta_hero" target="_blank" rel="noopener noreferrer"
+           href="https://wa.me/5538991408673?text=Ol%C3%A1!%20Vi%20a%20p%C3%A1gina%20da%20FisioGolden%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o."><svg class="ico ico--fill" aria-hidden="true"><use href="#i-wa"/></svg>Agendar minha avaliação<svg class="ico ico--go" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
+        <span class="hero__note"><svg class="ico"><use href="#i-clock"/></svg>Resposta pelo WhatsApp, sem compromisso</span>
+      </div>
+    </div>
+
+    <div class="hero__visual reveal" style="--d:.2s">
+      <!-- FOTO: salvar a foto do Dr. Jefferson (vertical, 900x1100 px, JPG) em imgs/jefferson-hero.jpg -->
+      <figure class="photo">
+        <img src="imgs/jefferson-hero.jpg" width="900" height="1100" fetchpriority="high"
+             alt="Fisioterapeuta Jefferson Lima na clínica FisioGolden Saúde"
+             onerror="this.parentElement.classList.add('is-empty');this.remove()">
+        <svg class="mark" viewBox="0 0 140 90" aria-hidden="true"><use href="#mark"/></svg>
+        <figcaption class="slot-label">[PENDENTE] foto do Dr. Jefferson</figcaption>
+      </figure>
+      <div class="ring" aria-hidden="true">
+        <svg class="ring__text" viewBox="0 0 132 132"><defs><path id="circ" d="M66 66m-50 0a50 50 0 1 1 100 0a50 50 0 1 1-100 0"/></defs>
+          <text><textPath href="#circ">FISIOTERAPIA ORTOPÉDICA • MONTES CLAROS •</textPath></text></svg>
+        <svg class="ico"><use href="#i-pulse"/></svg>
+      </div>
+      <div class="chip chip--a"><svg class="ico"><use href="#i-star"/></svg><span>5,0 no Google<small>Avaliações de pacientes</small></span></div>
+      <div class="chip chip--b"><svg class="ico"><use href="#i-shield"/></svg><span>+ de 5 anos de experiência<small>CREFITO 387757-F</small></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- faixa de prova social (não conta como seção) -->
+<div class="strip" aria-label="Áreas de atuação">
+  <div class="strip__track">
+    <span class="strip__item"><svg class="ico"><use href="#i-shield"/></svg>+ de 5 anos de experiência</span>
+    <span class="strip__item"><svg class="ico"><use href="#i-bone"/></svg>Ortopedia</span>
+    <span class="strip__item"><svg class="ico"><use href="#i-cross"/></svg>Traumatologia</span>
+    <span class="strip__item"><svg class="ico"><use href="#i-run"/></svg>Fisioterapia esportiva</span>
+    <span class="strip__item"><svg class="ico"><use href="#i-knee"/></svg>Reabilitação pós-operatória</span>
+    <span class="strip__item"><svg class="ico"><use href="#i-target"/></svg>Avaliação individualizada</span>
+    <span class="strip__item"><svg class="ico"><use href="#i-pin"/></svg>Montes Claros–MG</span>
+    <span class="strip__item" aria-hidden="true"><svg class="ico"><use href="#i-shield"/></svg>+ de 5 anos de experiência</span>
+    <span class="strip__item" aria-hidden="true"><svg class="ico"><use href="#i-bone"/></svg>Ortopedia</span>
+    <span class="strip__item" aria-hidden="true"><svg class="ico"><use href="#i-cross"/></svg>Traumatologia</span>
+    <span class="strip__item" aria-hidden="true"><svg class="ico"><use href="#i-run"/></svg>Fisioterapia esportiva</span>
+    <span class="strip__item" aria-hidden="true"><svg class="ico"><use href="#i-knee"/></svg>Reabilitação pós-operatória</span>
+    <span class="strip__item" aria-hidden="true"><svg class="ico"><use href="#i-target"/></svg>Avaliação individualizada</span>
+    <span class="strip__item" aria-hidden="true"><svg class="ico"><use href="#i-pin"/></svg>Montes Claros–MG</span>
+  </div>
+</div>
+
+<!-- ============ 2. IDENTIFICAÇÃO (claro) ============ -->
+<section class="sec sec--light" id="voce" aria-labelledby="h-voce">
+  <div class="wrap">
+    <div class="sec__head sec__head--center reveal">
+      <h2 id="h-voce">Quando a dor começa a decidir a sua rotina</h2>
+      <p>Se alguma destas situações é a sua, a avaliação pode mostrar o que está acontecendo.</p>
+    </div>
+
+    <div class="grid grid--3">
+      <article class="card reveal"><div class="card__ico"><svg class="ico"><use href="#i-knee"/></svg></div><h3>Dor no joelho</h3><p>Ao subir escada, agachar ou caminhar por mais tempo.</p></article>
+      <article class="card reveal" style="--d:.07s"><div class="card__ico"><svg class="ico"><use href="#i-cross"/></svg></div><h3>Pós-cirurgia</h3><p>Operou LCA, menisco ou prótese e tem receio de movimentar a articulação.</p></article>
+      <article class="card reveal" style="--d:.14s"><div class="card__ico"><svg class="ico"><use href="#i-shoulder"/></svg></div><h3>Ombro e lombar</h3><p>Dor ao levantar o braço ou uma lombar que sempre volta.</p></article>
+      <article class="card reveal"><div class="card__ico"><svg class="ico"><use href="#i-run"/></svg></div><h3>Lesão no esporte</h3><p>Deixou de treinar ou de jogar bola por causa de uma lesão.</p></article>
+      <article class="card reveal" style="--d:.07s"><div class="card__ico"><svg class="ico"><use href="#i-question"/></svg></div><h3>Já tentou sozinho</h3><p>Remédio, repouso ou vídeos da internet, e o problema continua.</p></article>
+      <article class="card reveal" style="--d:.14s"><div class="card__ico"><svg class="ico"><use href="#i-user"/></svg></div><h3>Rotina limitada</h3><p>Trabalhar, dormir ou brincar com os filhos ficou mais difícil.</p></article>
+    </div>
+
+    <div class="voices reveal" aria-label="Frases comuns de quem sente dor">
+      <span class="voice">“Daqui a pouco melhora.”</span>
+      <span class="voice">“Deve ser coisa da idade.”</span>
+      <span class="voice">“Não tenho tempo pra isso agora.”</span>
+      <span class="voice">“Será que vou precisar operar?”</span>
+    </div>
+
+    <div class="closing reveal">
+      <p>Dor persistente merece uma avaliação, não só um remédio e a espera.</p>
+      <a class="btn btn--gold btn--lg" data-cta="cta_identificacao" target="_blank" rel="noopener noreferrer"
+         href="https://wa.me/5538991408673?text=Ol%C3%A1!%20Vi%20a%20p%C3%A1gina%20da%20FisioGolden%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o."><svg class="ico ico--fill" aria-hidden="true"><use href="#i-wa"/></svg>Quero ser avaliado<svg class="ico ico--go" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. COMO FUNCIONA (escuro) ============ -->
+<section class="sec sec--dark" id="como-funciona" aria-labelledby="h-como">
+  <div class="wrap">
+    <div class="sec__head sec__head--center reveal">
+      <h2 id="h-como">Do primeiro contato à volta à rotina, <span class="em">você entende cada etapa</span></h2>
+    </div>
+
+    <ol class="steps" style="list-style:none;margin:0;padding-top:58px">
+      <li class="step reveal"><div class="step__n">1</div><h3>Conversa no WhatsApp</h3><p>Você conta o que sente e escolhe o melhor horário.</p></li>
+      <li class="step reveal" style="--d:.08s"><div class="step__n">2</div><h3>Avaliação individual</h3><p>Entendemos a lesão, mas também a sua rotina, suas dificuldades e seus objetivos.</p></li>
+      <li class="step reveal" style="--d:.16s"><div class="step__n">3</div><h3>Plano de tratamento</h3><p>Um plano feito para o seu caso, com as etapas explicadas desde o início.</p></li>
+      <li class="step reveal" style="--d:.24s"><div class="step__n">4</div><h3>Evolução acompanhada</h3><p>Você vê o progresso e ajusta o caminho junto com o fisioterapeuta.</p></li>
+    </ol>
+
+    <div class="note reveal">
+      <svg class="ico"><use href="#i-target"/></svg>
+      <span>Fisioterapia é reabilitação, não só aparelho e massagem: o foco é recuperar movimento, força e função.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. TRATAMENTOS (claro) ============ -->
+<section class="sec sec--cream" id="tratamentos" aria-labelledby="h-trat">
+  <div class="wrap">
+    <div class="sec__head reveal">
+      <h2 id="h-trat">Cuidado ortopédico e esportivo para cada fase</h2>
+    </div>
+
+    <div class="treat">
+      <article class="feature reveal">
+        <h3>Reabilitação pós-operatória</h3>
+        <p>Acompanhamento em cada fase da recuperação, com orientação clara do que esperar.</p>
+        <ul><li>LCA</li><li>Menisco</li><li>Prótese de joelho</li><li>Outras cirurgias ortopédicas</li></ul>
+        <a class="btn btn--gold" data-cta="cta_posoperatorio" target="_blank" rel="noopener noreferrer"
+           href="https://wa.me/5538991408673?text=Ol%C3%A1!%20Fiz%20cirurgia%20e%20quero%20saber%20sobre%20a%20reabilita%C3%A7%C3%A3o%20na%20FisioGolden."><svg class="ico ico--fill" aria-hidden="true"><use href="#i-wa"/></svg>Falar sobre minha cirurgia<svg class="ico ico--go" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
+      </article>
+
+      <div class="treat__list">
+        <article class="card reveal" style="--d:.08s"><div class="card__ico"><svg class="ico"><use href="#i-clipboard"/></svg></div><h3>Pré-operatória</h3><p>Preparo antes da cirurgia e orientação sobre o que vem depois.</p></article>
+        <article class="card reveal" style="--d:.16s"><div class="card__ico"><svg class="ico"><use href="#i-knee"/></svg></div><h3>Dores articulares</h3><p>Joelho, ombro, coluna e dores musculares do dia a dia.</p></article>
+        <article class="card reveal" style="--d:.24s"><div class="card__ico"><svg class="ico"><use href="#i-run"/></svg></div><h3>Lesões esportivas</h3><p>Do futebol à academia: volta ao esporte com segurança.</p></article>
+        <article class="card reveal" style="--d:.32s"><div class="card__ico"><svg class="ico"><use href="#i-bone"/></svg></div><h3>Fraturas e traumas</h3><p>Recuperação de movimento e força depois da imobilização.</p></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. AVALIAÇÕES (escuro) ============ -->
+<section class="sec sec--dark" id="depoimentos" aria-labelledby="h-dep">
+  <div class="wrap">
+    <div class="sec__head sec__head--center reveal">
+      <h2 id="h-dep">Quem já foi atendido <span class="em">fala por nós</span></h2>
+      <div class="rating" role="img" aria-label="Nota 5,0 no Google, com 17 avaliações">
+        <strong>5,0</strong>
+        <span class="stars" aria-hidden="true"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></span>
+        <small>17 avaliações no Google</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- Avaliações públicas copiadas do Google Meu Negócio (nome abreviado por privacidade).
+       Para trocar/adicionar: duplicar um <button class="rcard"> abaixo.
+       Para print de WhatsApp: adicionar data-print="imgs/print-01.jpg" no botão (abre ampliado). -->
+  <div class="car reveal" role="region" aria-roledescription="carrossel" aria-label="Avaliações de pacientes no Google">
+    <div class="car__view" id="carView" tabindex="0">
+      <div class="car__track" id="carTrack">
+        <button class="rcard" type="button"><span class="stars" aria-label="5 estrelas"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></span><p>Excelente clínica de fisioterapia, com ótimos profissionais, espaço amplo e materiais de ótima qualidade.</p><footer><span>I</span><div>Isabella M.<small>Avaliação no Google</small></div></footer></button>
+        <button class="rcard" type="button"><span class="stars" aria-label="5 estrelas"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></span><p>Excelente clínica e estrutura, profissionais atenciosos e super cuidadosos.</p><footer><span>S</span><div>Sabrine O.<small>Avaliação no Google</small></div></footer></button>
+        <button class="rcard" type="button"><span class="stars" aria-label="5 estrelas"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></span><p>Ótimo atendimento, ambiente agradável, encontrei ótimos profissionais na Fisiogolden.</p><footer><span>J</span><div>Jonathan A.<small>Avaliação no Google</small></div></footer></button>
+        <button class="rcard" type="button"><span class="stars" aria-label="5 estrelas"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></span><p>Uma das melhores clínicas de Montes Claros, profissionais super competentes.</p><footer><span>A</span><div>Andreia F.<small>Avaliação no Google</small></div></footer></button>
+        <button class="rcard" type="button"><span class="stars" aria-label="5 estrelas"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></span><p>Clínica fera, ambiente acolhedor.</p><footer><span>P</span><div>Pedro A.<small>Avaliação no Google</small></div></footer></button>
+        <button class="rcard" type="button"><span class="stars" aria-label="5 estrelas"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></span><p>Atendimento excelente, profissionais incríveis!</p><footer><span>A</span><div>Ana Laura B.<small>Avaliação no Google</small></div></footer></button>
+        <button class="rcard" type="button"><span class="stars" aria-label="5 estrelas"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></span><p>Excelente atendimento, profissionais qualificados, clínica diferenciada.</p><footer><span>Y</span><div>Yuri S.<small>Avaliação no Google</small></div></footer></button>
+        <button class="rcard" type="button"><span class="stars" aria-label="5 estrelas"><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg><svg class="ico"><use href="#i-star"/></svg></span><p>Atendimento perfeito.</p><footer><span>S</span><div>Stephanie F.<small>Avaliação no Google</small></div></footer></button>
+      </div>
+    </div>
+    <div class="car__ctrl">
+      <button class="car__btn car__btn--prev" id="carPrev" type="button" aria-label="Avaliação anterior"><svg class="ico"><use href="#i-arrow"/></svg></button>
+      <button class="car__btn" id="carNext" type="button" aria-label="Próxima avaliação"><svg class="ico"><use href="#i-arrow"/></svg></button>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <p class="disclaimer">Avaliações públicas do Google. Os resultados variam de pessoa para pessoa e dependem de cada caso.
+      <a href="https://www.google.com/maps/search/?api=1&query=FisioGolden+Sa%C3%BAde+Montes+Claros" target="_blank" rel="noopener noreferrer">Ver todas no Google<svg class="ico" style="display:inline;vertical-align:-3px;margin-left:4px"><use href="#i-ext"/></svg></a></p>
+  </div>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Avaliação ampliada">
+    <button class="lightbox__x" type="button" id="lightboxX" aria-label="Fechar"><svg class="ico"><use href="#i-x"/></svg></button>
+    <div class="lightbox__in" id="lightboxBody"></div>
+  </dialog>
+</section>
+
+<!-- ============ 6. SOBRE (claro) ============ -->
+<section class="sec sec--light" id="sobre" aria-labelledby="h-sobre">
+  <div class="wrap about">
+    <div class="reveal">
+      <!-- FOTO: salvar em imgs/jefferson-sobre.jpg (vertical, 860x1075 px, JPG) -->
+      <figure class="photo">
+        <img src="imgs/jefferson-sobre.jpg" width="860" height="1075" loading="lazy"
+             alt="Jefferson Yuri Teixeira Lima, fisioterapeuta"
+             onerror="this.parentElement.classList.add('is-empty');this.remove()">
+        <svg class="mark" viewBox="0 0 140 90" aria-hidden="true"><use href="#mark"/></svg>
+        <figcaption class="slot-label">[PENDENTE] foto do Dr. Jefferson</figcaption>
+      </figure>
+    </div>
+    <div class="reveal" style="--d:.1s">
+      <h2 id="h-sobre">Jefferson Yuri Teixeira Lima</h2>
+      <div class="about__role">Fisioterapeuta · CREFITO 387757-F</div>
+      <p>Atuo há mais de 5 anos com ortopedia, traumatologia e fisioterapia esportiva. Minha missão é ajudar cada pessoa a recuperar movimento, aliviar a dor e retomar a rotina com segurança.</p>
+      <p>Busco entender não só a lesão, mas a sua rotina e os seus objetivos. Acompanhar cirurgias ortopédicas me ajuda a conhecer cada etapa da recuperação.</p>
+      <div class="facts">
+        <div class="fact"><strong>+5</strong><span>anos de experiência</span></div>
+        <div class="fact"><strong>3</strong><span>áreas: ortopedia, trauma e esporte</span></div>
+        <div class="fact"><strong>5,0</strong><span>nota no Google</span></div>
+      </div>
+      <a class="btn btn--gold" data-cta="cta_sobre" target="_blank" rel="noopener noreferrer"
+         href="https://wa.me/5538991408673?text=Ol%C3%A1!%20Vi%20a%20p%C3%A1gina%20da%20FisioGolden%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o."><svg class="ico ico--fill" aria-hidden="true"><use href="#i-wa"/></svg>Conversar com o Jefferson<svg class="ico ico--go" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. DIFERENCIAIS (escuro) ============ -->
+<section class="sec sec--dark diff" id="diferenciais" aria-labelledby="h-dif">
+  <div class="wrap">
+    <div class="sec__head sec__head--center reveal">
+      <h2 id="h-dif">Por que escolher a <span class="em">FisioGolden</span></h2>
+    </div>
+    <div class="grid grid--2">
+      <article class="card reveal"><div class="card__ico"><svg class="ico"><use href="#i-target"/></svg></div><h3>Atendimento individualizado</h3><p>Cada plano nasce da sua lesão, da sua rotina e do que você quer voltar a fazer.</p></article>
+      <article class="card reveal" style="--d:.08s"><div class="card__ico"><svg class="ico"><use href="#i-book"/></svg></div><h3>Baseado em evidências</h3><p>Condutas sustentadas por ciência, explicadas de forma simples.</p></article>
+      <article class="card reveal" style="--d:.16s"><div class="card__ico"><svg class="ico"><use href="#i-dumbbell"/></svg></div><h3>Equipamentos de primeira linha</h3><p>Estrutura ampla para conduzir cada fase da reabilitação.</p></article>
+      <article class="card reveal" style="--d:.24s"><div class="card__ico"><svg class="ico"><use href="#i-heart"/></svg></div><h3>Acompanhamento próximo</h3><p>Você sabe o objetivo de cada etapa e vê a sua evolução.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8. LOCALIZAÇÃO (claro) ============ -->
+<section class="sec sec--light" id="localizacao" aria-labelledby="h-loc">
+  <div class="wrap">
+    <div class="sec__head reveal">
+      <h2 id="h-loc">Atendimento presencial em Montes Claros</h2>
+    </div>
+    <div class="where">
+      <div class="info reveal">
+        <div class="info__row"><div class="card__ico"><svg class="ico"><use href="#i-pin"/></svg></div><div><h3>Endereço</h3><p>R. Joviniano Ramos, 177<br>São José, Montes Claros–MG<br>CEP 39400-347</p></div></div>
+        <!-- [PENDENTE] confirmar dias e horários de funcionamento com a clínica -->
+        <div class="info__row"><div class="card__ico"><svg class="ico"><use href="#i-clock"/></svg></div><div><h3>Atendimento</h3><p>Segunda a sexta, com hora marcada</p></div></div>
+        <div class="info__row"><div class="card__ico"><svg class="ico"><use href="#i-phone"/></svg></div><div><h3>WhatsApp</h3><p><a href="https://wa.me/5538991408673" target="_blank" rel="noopener noreferrer" data-cta="link_telefone">(38) 99140-8673</a></p></div></div>
+        <div class="info__btns">
+          <a class="btn btn--gold" data-cta="cta_localizacao" target="_blank" rel="noopener noreferrer"
+             href="https://wa.me/5538991408673?text=Ol%C3%A1!%20Vi%20a%20p%C3%A1gina%20da%20FisioGolden%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o."><svg class="ico ico--fill" aria-hidden="true"><use href="#i-wa"/></svg>Agendar<svg class="ico ico--go" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
+          <a class="btn btn--ghost" data-cta="link_rota" target="_blank" rel="noopener noreferrer"
+             href="https://www.google.com/maps/dir/?api=1&destination=R.+Joviniano+Ramos,+177,+S%C3%A3o+Jos%C3%A9,+Montes+Claros+-+MG">Traçar rota<svg class="ico"><use href="#i-ext"/></svg></a>
+        </div>
+      </div>
+      <div class="map reveal" style="--d:.1s">
+        <iframe title="Mapa da FisioGolden Saúde em Montes Claros" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=R.+Joviniano+Ramos,+177,+Montes+Claros+MG&z=16&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9. CTA FINAL (escuro) ============ -->
+<section class="sec sec--dark final" id="agendar" aria-labelledby="h-final">
+  <svg class="mark-bg" viewBox="0 0 140 90" aria-hidden="true"><use href="#mark"/></svg>
+  <div class="wrap">
+    <h2 id="h-final" class="reveal" style="--d:.06s">Seu próximo passo é uma <span class="em">boa avaliação</span></h2>
+    <p class="final__lead reveal" style="--d:.12s">Sem pressa e sem protocolo pronto. Você conta o seu caso e sai sabendo o caminho.</p>
+    <ul class="include reveal" style="--d:.18s">
+      <li><svg class="ico"><use href="#i-check"/></svg>Conversa para entender sua dor e sua rotina</li>
+      <li><svg class="ico"><use href="#i-check"/></svg>Avaliação física individual</li>
+      <li><svg class="ico"><use href="#i-check"/></svg>Explicação clara do plano de tratamento</li>
+    </ul>
+    <div class="reveal" style="--d:.24s">
+      <a class="btn btn--gold btn--lg" data-cta="cta_oferta" target="_blank" rel="noopener noreferrer"
+         href="https://wa.me/5538991408673?text=Ol%C3%A1!%20Vi%20a%20p%C3%A1gina%20da%20FisioGolden%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o."><svg class="ico ico--fill" aria-hidden="true"><use href="#i-wa"/></svg>Agendar pelo WhatsApp<svg class="ico ico--go" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
+      <p class="hero__note"><svg class="ico"><use href="#i-pin"/></svg>Atendimento presencial · Montes Claros–MG</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10. PERGUNTAS FREQUENTES (claro) ============ -->
+<section class="sec sec--light" id="duvidas" aria-labelledby="h-faq">
+  <div class="wrap">
+    <div class="sec__head sec__head--center reveal">
+      <h2 id="h-faq">Perguntas frequentes</h2>
+    </div>
+    <div class="faq reveal">
+      <details name="faq" open><summary>Como funciona a primeira avaliação?<svg class="ico"><use href="#i-plus"/></svg></summary>
+        <p>Você conversa com o fisioterapeuta sobre sua dor, sua rotina e seus objetivos. Depois vem a avaliação física e a explicação de como seguir.</p></details>
+      <details name="faq"><summary>Preciso ter feito cirurgia para começar?<svg class="ico"><use href="#i-plus"/></svg></summary>
+        <p>Não. Dores e lesões também são tratadas. Se você tem exames, laudos ou indicação médica, leve para a avaliação.</p></details>
+      <details name="faq"><summary>Fisioterapia é só aparelho e massagem?<svg class="ico"><use href="#i-plus"/></svg></summary>
+        <p>Não. O foco é reabilitar: recuperar movimento, força e função, com plano e evolução acompanhada. Os recursos mudam conforme o seu caso.</p></details>
+      <details name="faq"><summary>Vou precisar parar minha rotina ou meu esporte?<svg class="ico"><use href="#i-plus"/></svg></summary>
+        <p>Cada caso é diferente. Na avaliação, o fisioterapeuta explica o que é seguro manter e como adaptar o plano à sua rotina.</p></details>
+      <details name="faq"><summary>Em quanto tempo vou melhorar?<svg class="ico"><use href="#i-plus"/></svg></summary>
+        <p>Depende da lesão, do seu histórico e da constância no tratamento. Ninguém sério promete o mesmo prazo para todos. Na avaliação você recebe uma expectativa realista.</p></details>
+      <details name="faq"><summary>O que é o plano de tratamento e quanto custa?<svg class="ico"><use href="#i-plus"/></svg></summary>
+        <p>É o acompanhamento organizado em etapas, montado para o seu caso. Valores e condições são passados no WhatsApp, depois de entender o que você precisa.</p></details>
+      <details name="faq"><summary>Já operei. Posso começar a reabilitação?<svg class="ico"><use href="#i-plus"/></svg></summary>
+        <p>Em geral, a reabilitação segue as orientações do cirurgião. Chame no WhatsApp e informe sua cirurgia e as recomendações que recebeu.</p></details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ RODAPÉ ============ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__top">
+      <div>
+        <a class="brand" href="#inicio"><img src="imgs/logo.jpg" width="42" height="42" alt=""><span>FisioGolden<small>Fisioterapia · Montes Claros</small></span></a>
+        <p style="margin-top:14px">Fisioterapia ortopédica, traumatológica e esportiva.</p>
+      </div>
+      <div class="foot__links">
+        <a href="https://www.instagram.com/fisiogoldensaude/" target="_blank" rel="noopener noreferrer" data-cta="link_instagram">@fisiogoldensaude</a>
+        <a href="https://wa.me/5538991408673" target="_blank" rel="noopener noreferrer" data-cta="link_whatsapp_rodape">(38) 99140-8673</a>
+        <!-- [PENDENTE] publicar a política de privacidade e trocar o link -->
+        <a href="#">Política de privacidade</a>
+      </div>
+    </div>
+    <div class="foot__legal">
+      <!-- [PENDENTE] confirmar razão social, CNPJ e número/região do CREFITO com o cliente -->
+      <span>Teixeira Lima Fisioterapia LTDA · CNPJ 65.793.536/0001-57</span>
+      <span>Responsável técnico: Jefferson Yuri Teixeira Lima · CREFITO 387757-F</span>
+      <span>As informações desta página são educativas e não substituem a avaliação de um profissional. Os resultados variam de pessoa para pessoa.</span>
+      <span>© 2026 FisioGolden Saúde. Todos os direitos reservados.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- barra fixa (celular) -->
+<div class="sticky" id="sticky">
+  <a class="btn btn--gold" data-cta="cta_sticky" target="_blank" rel="noopener noreferrer"
+     href="https://wa.me/5538991408673?text=Ol%C3%A1!%20Vi%20a%20p%C3%A1gina%20da%20FisioGolden%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o."><svg class="ico ico--fill" aria-hidden="true"><use href="#i-wa"/></svg>Agendar minha avaliação<svg class="ico ico--go" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
+</div>
+
+<script>
+(function(){
+  'use strict';
+  var $ = function(s,c){return (c||document).querySelector(s)};
+  var $$ = function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- rastreamento: um evento por clique, nomes consistentes (cta_hero, cta_nav, cta_oferta...) ---- */
+  window.dataLayer = window.dataLayer || [];
+  document.addEventListener('click', function(e){
+    var a = e.target.closest('[data-cta]');
+    if(!a) return;
+    window.dataLayer.push({event:'cta_click', cta_id:a.getAttribute('data-cta'), cta_url:a.href || ''});
+    if(a.href && a.href.indexOf('wa.me') > -1) window.dataLayer.push({event:'whatsapp_click', cta_id:a.getAttribute('data-cta')});
+  });
+
+  /* ---- menu: estado sólido, mobile, scroll-spy ---- */
+  var nav = $('#nav'), burger = $('#burger');
+  function onScroll(){ nav.classList.toggle('is-solid', window.scrollY > 24); }
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+  burger.addEventListener('click', function(){
+    var open = nav.classList.toggle('is-open');
+    burger.setAttribute('aria-expanded', open);
+    burger.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+    $('use', burger).setAttribute('href', open ? '#i-x' : '#i-menu');
+  });
+  $$('#navlinks a').forEach(function(a){ a.addEventListener('click', function(){
+    nav.classList.remove('is-open'); burger.setAttribute('aria-expanded','false'); $('use',burger).setAttribute('href','#i-menu');
+  });});
+  var links = $$('#navlinks a');
+  var spy = new IntersectionObserver(function(es){
+    es.forEach(function(en){
+      if(!en.isIntersecting) return;
+      links.forEach(function(l){ l.classList.toggle('is-active', l.getAttribute('href') === '#'+en.target.id); });
+    });
+  }, {rootMargin:'-45% 0px -50% 0px'});
+  links.forEach(function(l){ var s = $(l.getAttribute('href')); if(s) spy.observe(s); });
+
+  /* ---- entrada suave ao rolar ---- */
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, {threshold:.12, rootMargin:'0px 0px -6% 0px'});
+  $$('.reveal').forEach(function(el){ io.observe(el); });
+
+  /* ---- barra fixa (celular): aparece após a 1ª dobra e some na seção final ---- */
+  var sticky = $('#sticky'), hero = $('.hero'), final = $('#agendar');
+  var heroGone = false, inFinal = false;
+  function stickyState(){
+    sticky.classList.toggle('is-on', heroGone && !inFinal);
+  }
+  new IntersectionObserver(function(es){ heroGone = !es[0].isIntersecting && es[0].boundingClientRect.top < 0; stickyState(); }, {threshold:0}).observe(hero);
+  new IntersectionObserver(function(es){ inFinal = es[0].isIntersecting; stickyState(); }, {threshold:.25}).observe(final);
+
+  /* ---- carrossel infinito de avaliações ---- */
+  var view = $('#carView'), track = $('#carTrack');
+  var originals = $$('.rcard', track);
+  [1,2].forEach(function(){ originals.forEach(function(c){
+    var cl = c.cloneNode(true); cl.setAttribute('aria-hidden','true'); cl.tabIndex = -1; track.appendChild(cl);
+  });});
+  var cards = $$('.rcard', track), setW = 0, pos = 0, paused = false, dragging = false, moved = 0;
+  function measure(){
+    setW = cards[originals.length].offsetLeft - cards[0].offsetLeft;
+    if(!pos) pos = setW;
+    view.scrollLeft = pos;
+  }
+  function wrap(){
+    if(pos >= 2*setW){ pos -= setW; } else if(pos < 0){ pos += setW; }
+    view.scrollLeft = pos;
+  }
+  function highlight(){
+    var c = view.scrollLeft + view.clientWidth/2, best = null, d = 1e9;
+    cards.forEach(function(el){ var m = el.offsetLeft + el.offsetWidth/2, k = Math.abs(m - c); if(k < d){ d = k; best = el; } });
+    cards.forEach(function(el){ el.classList.toggle('is-center', el === best); });
+  }
+  function tick(){
+    if(!paused && !dragging && !reduce){ pos += .45; wrap(); }
+    highlight(); requestAnimationFrame(tick);
+  }
+  window.addEventListener('load', function(){ measure(); requestAnimationFrame(tick); });
+  window.addEventListener('resize', function(){ var r = pos/(setW||1); measure(); pos = r*setW; });
+  view.addEventListener('scroll', function(){ if(dragging || paused || reduce) pos = view.scrollLeft; }, {passive:true});
+  ['mouseenter','focusin'].forEach(function(ev){ view.addEventListener(ev, function(){ paused = true; }); });
+  ['mouseleave','focusout'].forEach(function(ev){ view.addEventListener(ev, function(){ paused = false; pos = view.scrollLeft; }); });
+  function shift(dir){
+    var w = cards[0].offsetWidth + 22;
+    var from = view.scrollLeft, to = from + dir*w, t0 = null;
+    paused = true;
+    (function step(t){ if(!t0) t0 = t; var p = Math.min((t - t0)/380, 1), e = 1 - Math.pow(1-p,3);
+      pos = from + (to - from)*e; wrap(); if(p < 1) requestAnimationFrame(step); else paused = false; })(performance.now());
+  }
+  $('#carPrev').addEventListener('click', function(){ shift(-1); });
+  $('#carNext').addEventListener('click', function(){ shift(1); });
+  view.addEventListener('keydown', function(e){ if(e.key==='ArrowRight'){ shift(1); e.preventDefault(); } if(e.key==='ArrowLeft'){ shift(-1); e.preventDefault(); } });
+  /* arrastar com mouse (no celular o dedo já rola nativamente) */
+  var startX = 0, startPos = 0;
+  view.addEventListener('pointerdown', function(e){ if(e.pointerType !== 'mouse') return; dragging = true; moved = 0; startX = e.clientX; startPos = view.scrollLeft; view.classList.add('is-drag'); view.setPointerCapture(e.pointerId); });
+  view.addEventListener('pointermove', function(e){ if(!dragging) return; moved = Math.abs(e.clientX - startX); pos = startPos - (e.clientX - startX); wrap(); });
+  function endDrag(){ if(!dragging) return; dragging = false; view.classList.remove('is-drag'); pos = view.scrollLeft; }
+  view.addEventListener('pointerup', endDrag); view.addEventListener('pointercancel', endDrag);
+
+  /* ---- janela de ampliação (dialog) ---- */
+  var dlg = $('#lightbox'), body = $('#lightboxBody'), lastFocus = null;
+  track.addEventListener('click', function(e){
+    var card = e.target.closest('.rcard'); if(!card || moved > 6){ moved = 0; return; }
+    lastFocus = card; body.innerHTML = '';
+    var print = card.getAttribute('data-print');
+    if(print){ var im = new Image(); im.src = print; im.alt = 'Print de feedback de paciente'; body.appendChild(im); }
+    body.appendChild($('.stars', card).cloneNode(true));
+    var p = document.createElement('p'); p.textContent = $('p', card).textContent; body.appendChild(p);
+    var who = document.createElement('strong'); who.textContent = $('footer div', card).firstChild.textContent; body.appendChild(who);
+    if(dlg.showModal) dlg.showModal(); else dlg.setAttribute('open','');
+  });
+  $('#lightboxX').addEventListener('click', function(){ dlg.close(); });
+  dlg.addEventListener('click', function(e){ if(e.target === dlg) dlg.close(); });
+  dlg.addEventListener('close', function(){ if(lastFocus) lastFocus.focus(); });
+})();
+</script>
+</body>
+</html>
