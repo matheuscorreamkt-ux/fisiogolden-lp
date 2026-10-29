@@ -21,6 +21,7 @@
 <meta property="og:url" content="https://fisogolden.com.br/">
 <meta property="og:image" content="https://fisogolden.com.br/imgs/og.jpg">
 
+<link rel="preload" as="image" href="imgs/jefferson-hero-1.jpg" fetchpriority="high">
 <link rel="icon" type="image/png" href="imgs/favicon.png">
 <link rel="apple-touch-icon" href="imgs/apple-touch-icon.png">
 
@@ -235,7 +236,11 @@ section[id]{scroll-margin-top:calc(var(--nav-h) - 1px)}
 .voice{padding:10px 18px;border-radius:999px;background:var(--cream);border:1px dashed var(--gold-600);font-family:var(--font-display);font-weight:600;font-size:16px;color:var(--teal-800);animation:float 7s ease-in-out infinite}
 .voice:nth-child(2){animation-delay:-1.5s}.voice:nth-child(3){animation-delay:-3s}.voice:nth-child(4){animation-delay:-4.5s}.voice:nth-child(5){animation-delay:-6s}
 .closing{margin-top:44px;text-align:center}
-.closing p{font-family:var(--font-display);font-size:clamp(22px,3vw,30px);font-weight:600;color:var(--teal-900);max-width:640px;margin:0 auto 26px;letter-spacing:-.015em}
+.msg{display:flex;align-items:flex-end;justify-content:center;gap:14px;max-width:640px;margin:0 auto 28px;text-align:left}
+.msg__avatar{width:64px;height:64px;border-radius:50%;object-fit:cover;flex:none;box-shadow:0 0 0 3px #fff,0 0 0 4.5px var(--gold)}
+.msg__bubble{background:var(--cream);border:1px solid var(--gold-200);border-radius:22px 22px 22px 6px;padding:18px 22px}
+.msg__bubble p{font-family:var(--font-display);font-size:clamp(19px,2.4vw,24px);font-weight:600;line-height:1.3;color:var(--teal-900);letter-spacing:-.015em}
+.msg__bubble span{display:block;margin-top:8px;font-size:13.5px;font-weight:700;color:var(--teal-600)}
 
 /* ---------- 3. COMO FUNCIONA ---------- */
 .steps{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:s}
@@ -255,8 +260,10 @@ section[id]{scroll-margin-top:calc(var(--nav-h) - 1px)}
 
 /* ---------- 4. TRATAMENTOS ---------- */
 .treat{display:grid;grid-template-columns:1.1fr 1fr;gap:22px}
-.feature{position:relative;border-radius:var(--radius-l);padding:40px;color:#fff;overflow:hidden;background:linear-gradient(150deg,var(--teal-700),var(--teal-900));display:flex;flex-direction:column;justify-content:flex-end;min-height:420px}
-.feature::after{content:"";position:absolute;right:-90px;top:-90px;width:300px;height:300px;border-radius:50%;border:1.5px solid rgba(214,184,117,.35);box-shadow:0 0 0 38px rgba(214,184,117,.06),0 0 0 80px rgba(214,184,117,.04)}
+.feature{position:relative;isolation:isolate;border-radius:var(--radius-l);padding:40px;color:#fff;overflow:hidden;background:var(--teal-900);display:flex;flex-direction:column;justify-content:flex-end;min-height:580px}
+.feature__bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 18%;z-index:-2;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.feature:hover .feature__bg{transform:scale(1.04)}
+.feature::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(18,48,58,0) 18%,rgba(18,48,58,.82) 50%,var(--teal-900) 78%)}
 .feature h3{font-size:clamp(28px,3.4vw,38px);margin-bottom:14px;position:relative;z-index:1}
 .feature p{color:#C6D6DA;max-width:440px;position:relative;z-index:1}
 .feature ul{list-style:none;padding:0;margin:20px 0 28px;display:flex;flex-wrap:wrap;gap:10px;position:relative;z-index:1}
@@ -266,7 +273,15 @@ section[id]{scroll-margin-top:calc(var(--nav-h) - 1px)}
 .treat__list .card{padding:24px}
 .treat__list .card h3{font-size:18px}
 .treat__list .card p{font-size:15px}
-@media (max-width:959px){.treat{grid-template-columns:1fr}.feature{min-height:0;padding:32px 26px}}
+.feature__body{position:relative;z-index:1;display:flex;flex-direction:column}
+@media (max-width:959px){
+  .treat{grid-template-columns:1fr}
+  /* no celular a foto fica em cima e o texto embaixo, sem cobrir o rosto */
+  .feature{display:block;min-height:0;padding:0}
+  .feature__bg{position:relative;height:340px;z-index:0;object-position:center 12%}
+  .feature::before{inset:0 0 auto 0;height:340px;z-index:1;background:linear-gradient(180deg,transparent 55%,var(--teal-900))}
+  .feature__body{z-index:2;margin-top:-36px;padding:0 24px 30px}
+}
 @media (max-width:540px){.treat__list{grid-template-columns:1fr}}
 
 /* ---------- 5. DEPOIMENTOS (carrossel infinito) ---------- */
@@ -378,6 +393,50 @@ dialog.lightbox::backdrop{background:rgba(5,14,18,.78);backdrop-filter:blur(4px)
 .sticky .btn{width:100%}
 @media (min-width:768px){.sticky{display:none}}
 
+/* ---------- fotos do Jefferson ---------- */
+/* retrato "vivo" do hero: 3 fotos alternando com zoom lento */
+.photo--live{background:var(--teal-800)}
+.photo--live img{position:absolute;inset:0;opacity:0;transform:scale(1.07);transition:opacity 1.6s ease}
+.photo--live img.is-on{opacity:1;animation:kenburns 7.5s ease-out both}
+.photo--live img.was-on{transform:scale(1)}
+.photo--live::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 62%,rgba(11,26,32,.38));pointer-events:none}
+@keyframes kenburns{from{transform:scale(1.08)}to{transform:scale(1)}}
+
+/* balão de boas-vindas no hero */
+.hello{position:absolute;left:-58px;top:120px;z-index:2;display:flex;align-items:center;min-height:52px;padding:12px 18px;border-radius:20px 20px 20px 6px;background:var(--gold);color:var(--ink);font-weight:800;font-size:15px;line-height:1.25;box-shadow:var(--shadow-gold)}
+.hello small{display:block;font-weight:600;font-size:12.5px;color:rgba(11,26,32,.72);margin-top:2px}
+.hello__dots{display:none;gap:5px}
+.hello__dots i{width:8px;height:8px;border-radius:50%;background:var(--ink);opacity:.3;animation:typing 1s ease-in-out infinite}
+.hello__dots i:nth-child(2){animation-delay:.15s}.hello__dots i:nth-child(3){animation-delay:.3s}
+@keyframes typing{0%,60%,100%{opacity:.25;transform:none}30%{opacity:.85;transform:translateY(-3px)}}
+.js .hello{opacity:0;transform:translateY(10px) scale(.94);transition:opacity .5s,transform .5s cubic-bezier(.2,.7,.2,1)}
+.js .hello.is-shown{opacity:1;transform:none}
+.js .hello:not(.is-typed) .hello__dots{display:flex}
+.js .hello:not(.is-typed) .hello__txt{display:none}
+.js .hello.is-typed .hello__txt{animation:fade .4s ease}
+/* no celular o balão sobe para cima da foto, sem cobrir o rosto */
+@media (max-width:959px){.hello{left:-8px;top:-20px;font-size:14px}}
+
+/* galeria da clínica (diferenciais) */
+.diff__grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center}
+.gallery{position:relative;width:100%;max-width:440px;margin-inline:auto;padding-bottom:44px}
+.gallery__main{position:relative;margin:0;aspect-ratio:4/5;border-radius:var(--radius-l);overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.4)}
+.gallery__main img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.gallery:hover .gallery__main img{transform:scale(1.04)}
+/* etiqueta no canto inferior esquerdo, longe do rosto e ao lado da foto menor */
+.gallery__main figcaption{position:absolute;left:16px;bottom:16px;max-width:48%;padding:8px 14px;border-radius:999px;background:rgba(11,26,32,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:var(--gold-200);font-size:13px;font-weight:700}
+.gallery__inset{position:absolute;right:-34px;bottom:0;width:48%;margin:0;border-radius:var(--radius-m);overflow:hidden;border:4px solid var(--gold);box-shadow:0 22px 44px rgba(0,0,0,.45);animation:float 7s ease-in-out infinite}
+.gallery__inset img{width:100%;height:auto}
+.diff__cards .card{padding:26px}
+.diff__cards .card::after{font-size:36px;top:20px;right:22px}
+@media (max-width:959px){.diff__grid{grid-template-columns:1fr;gap:40px}.gallery{max-width:380px}.gallery__inset{right:-8px}}
+
+/* avatar no CTA final */
+.host{position:relative;width:118px;height:118px;margin:0 auto 14px}
+.host img{position:relative;width:100%;height:100%;border-radius:50%;object-fit:cover;box-shadow:0 0 0 4px var(--teal-900)}
+.host__ring{position:absolute;inset:-11px;border-radius:50%;border:1.5px dashed var(--gold);animation:spin 26s linear infinite}
+.host__name{font-size:14px;font-weight:700;letter-spacing:.06em;color:var(--gold-200);margin-bottom:18px}
+
 /* ---------- entrada ao rolar ---------- */
 .js .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
 .js .reveal.in{opacity:1;transform:none}
@@ -487,14 +546,18 @@ dialog.lightbox::backdrop{background:rgba(5,14,18,.78);backdrop-filter:blur(4px)
     </div>
 
     <div class="hero__visual reveal" style="--d:.2s">
-      <!-- FOTO: salvar a foto do Dr. Jefferson (vertical, 900x1100 px, JPG) em imgs/jefferson-hero.jpg -->
-      <figure class="photo">
-        <img src="imgs/jefferson-hero.jpg" width="900" height="1100" fetchpriority="high"
-             alt="Fisioterapeuta Jefferson Lima na clínica FisioGolden Saúde"
-             onerror="this.parentElement.classList.add('is-empty');this.remove()">
-        <svg class="mark" viewBox="0 0 140 90" aria-hidden="true"><use href="#mark"/></svg>
-        <figcaption class="slot-label">[PENDENTE] foto do Dr. Jefferson</figcaption>
+      <!-- FOTOS: retrato "vivo" — as 3 fotos se alternam devagar (900x1125 px cada).
+           Para trocar, substituir os arquivos imgs/jefferson-hero-1/2/3.jpg mantendo o tamanho. -->
+      <figure class="photo photo--live" id="heroPhoto">
+        <img class="is-on" src="imgs/jefferson-hero-1.jpg" width="900" height="1125" fetchpriority="high" decoding="async"
+             alt="Fisioterapeuta Jefferson Lima sorrindo no consultório da FisioGolden Saúde">
+        <img src="imgs/jefferson-hero-2.jpg" width="900" height="1125" fetchpriority="low" decoding="async" alt="" aria-hidden="true">
+        <img src="imgs/jefferson-hero-3.jpg" width="900" height="1125" fetchpriority="low" decoding="async" alt="" aria-hidden="true">
       </figure>
+      <div class="hello" aria-hidden="true">
+        <span class="hello__dots"><i></i><i></i><i></i></span>
+        <span class="hello__txt">Oi, eu sou o Jefferson.<small>Vamos cuidar dessa dor juntos?</small></span>
+      </div>
       <div class="ring" aria-hidden="true">
         <svg class="ring__text" viewBox="0 0 132 132"><defs><path id="circ" d="M66 66m-50 0a50 50 0 1 1 100 0a50 50 0 1 1-100 0"/></defs>
           <text><textPath href="#circ">FISIOTERAPIA ORTOPÉDICA • MONTES CLAROS •</textPath></text></svg>
@@ -551,7 +614,13 @@ dialog.lightbox::backdrop{background:rgba(5,14,18,.78);backdrop-filter:blur(4px)
     </div>
 
     <div class="closing reveal">
-      <p>Dor persistente merece uma avaliação, não só um remédio e a espera.</p>
+      <div class="msg">
+        <img class="msg__avatar" src="imgs/jefferson-avatar.jpg" width="320" height="320" loading="lazy" alt="Jefferson Lima, fisioterapeuta">
+        <div class="msg__bubble">
+          <p>Dor persistente merece uma avaliação, não só um remédio e a espera.</p>
+          <span>Jefferson Lima · Fisioterapeuta</span>
+        </div>
+      </div>
       <a class="btn btn--gold btn--lg" data-cta="cta_identificacao" target="_blank" rel="noopener noreferrer"
          href="https://wa.me/5538991408673?text=Ol%C3%A1!%20Vi%20a%20p%C3%A1gina%20da%20FisioGolden%20e%20quero%20agendar%20uma%20avalia%C3%A7%C3%A3o."><svg class="ico ico--fill" aria-hidden="true"><use href="#i-wa"/></svg>Quero ser avaliado<svg class="ico ico--go" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
     </div>
@@ -588,11 +657,15 @@ dialog.lightbox::backdrop{background:rgba(5,14,18,.78);backdrop-filter:blur(4px)
 
     <div class="treat">
       <article class="feature reveal">
+        <img class="feature__bg" src="imgs/tratamento-reabilitacao.jpg" width="900" height="1125" loading="lazy"
+             alt="Jefferson Lima com anilhas de reabilitação na área de exercícios da clínica">
+        <div class="feature__body">
         <h3>Reabilitação pós-operatória</h3>
         <p>Acompanhamento em cada fase da recuperação, com orientação clara do que esperar.</p>
         <ul><li>LCA</li><li>Menisco</li><li>Prótese de joelho</li><li>Outras cirurgias ortopédicas</li></ul>
         <a class="btn btn--gold" data-cta="cta_posoperatorio" target="_blank" rel="noopener noreferrer"
            href="https://wa.me/5538991408673?text=Ol%C3%A1!%20Fiz%20cirurgia%20e%20quero%20saber%20sobre%20a%20reabilita%C3%A7%C3%A3o%20na%20FisioGolden."><svg class="ico ico--fill" aria-hidden="true"><use href="#i-wa"/></svg>Falar sobre minha cirurgia<svg class="ico ico--go" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
+        </div>
       </article>
 
       <div class="treat__list">
@@ -641,8 +714,7 @@ dialog.lightbox::backdrop{background:rgba(5,14,18,.78);backdrop-filter:blur(4px)
   </div>
 
   <div class="wrap">
-    <p class="disclaimer">Avaliações públicas do Google. Os resultados variam de pessoa para pessoa e dependem de cada caso.
-      <a href="https://www.google.com/maps/search/?api=1&query=FisioGolden+Sa%C3%BAde+Montes+Claros" target="_blank" rel="noopener noreferrer">Ver todas no Google<svg class="ico" style="display:inline;vertical-align:-3px;margin-left:4px"><use href="#i-ext"/></svg></a></p>
+    <p class="disclaimer">Avaliações públicas do Google. Os resultados variam de pessoa para pessoa e dependem de cada caso.</p>
   </div>
 
   <dialog class="lightbox" id="lightbox" aria-label="Avaliação ampliada">
@@ -655,13 +727,10 @@ dialog.lightbox::backdrop{background:rgba(5,14,18,.78);backdrop-filter:blur(4px)
 <section class="sec sec--light" id="sobre" aria-labelledby="h-sobre">
   <div class="wrap about">
     <div class="reveal">
-      <!-- FOTO: salvar em imgs/jefferson-sobre.jpg (vertical, 860x1075 px, JPG) -->
-      <figure class="photo">
+      <!-- FOTO: imgs/jefferson-sobre.jpg (860x1075 px) -->
+      <figure class="photo photo--about">
         <img src="imgs/jefferson-sobre.jpg" width="860" height="1075" loading="lazy"
-             alt="Jefferson Yuri Teixeira Lima, fisioterapeuta"
-             onerror="this.parentElement.classList.add('is-empty');this.remove()">
-        <svg class="mark" viewBox="0 0 140 90" aria-hidden="true"><use href="#mark"/></svg>
-        <figcaption class="slot-label">[PENDENTE] foto do Dr. Jefferson</figcaption>
+             alt="Jefferson Yuri Teixeira Lima sorrindo na mesa do consultório">
       </figure>
     </div>
     <div class="reveal" style="--d:.1s">
@@ -686,11 +755,23 @@ dialog.lightbox::backdrop{background:rgba(5,14,18,.78);backdrop-filter:blur(4px)
     <div class="sec__head sec__head--center reveal">
       <h2 id="h-dif">Por que escolher a <span class="em">FisioGolden</span></h2>
     </div>
-    <div class="grid grid--2">
-      <article class="card reveal"><div class="card__ico"><svg class="ico"><use href="#i-target"/></svg></div><h3>Atendimento individualizado</h3><p>Cada plano nasce da sua lesão, da sua rotina e do que você quer voltar a fazer.</p></article>
-      <article class="card reveal" style="--d:.08s"><div class="card__ico"><svg class="ico"><use href="#i-book"/></svg></div><h3>Baseado em evidências</h3><p>Condutas sustentadas por ciência, explicadas de forma simples.</p></article>
-      <article class="card reveal" style="--d:.16s"><div class="card__ico"><svg class="ico"><use href="#i-dumbbell"/></svg></div><h3>Equipamentos de primeira linha</h3><p>Estrutura ampla para conduzir cada fase da reabilitação.</p></article>
-      <article class="card reveal" style="--d:.24s"><div class="card__ico"><svg class="ico"><use href="#i-heart"/></svg></div><h3>Acompanhamento próximo</h3><p>Você sabe o objetivo de cada etapa e vê a sua evolução.</p></article>
+    <div class="diff__grid">
+      <!-- FOTOS: imgs/clinica-estrutura.jpg (800x1000) e imgs/clinica-equipamento.jpg (600x600) -->
+      <div class="gallery reveal">
+        <figure class="gallery__main">
+          <img src="imgs/clinica-estrutura.jpg" width="800" height="1000" loading="lazy" alt="Jefferson Lima sorrindo na área de reabilitação da clínica, com bicicleta e aparelhos">
+          <figcaption>Área de reabilitação</figcaption>
+        </figure>
+        <figure class="gallery__inset">
+          <img src="imgs/clinica-equipamento.jpg" width="600" height="600" loading="lazy" alt="Aparelho de eletroterapia sendo configurado pelo fisioterapeuta">
+        </figure>
+      </div>
+      <div class="grid grid--2 diff__cards">
+        <article class="card reveal"><div class="card__ico"><svg class="ico"><use href="#i-target"/></svg></div><h3>Atendimento individualizado</h3><p>Cada plano nasce da sua lesão, da sua rotina e do que você quer voltar a fazer.</p></article>
+        <article class="card reveal" style="--d:.08s"><div class="card__ico"><svg class="ico"><use href="#i-book"/></svg></div><h3>Baseado em evidências</h3><p>Condutas sustentadas por ciência, explicadas de forma simples.</p></article>
+        <article class="card reveal" style="--d:.16s"><div class="card__ico"><svg class="ico"><use href="#i-dumbbell"/></svg></div><h3>Equipamentos de primeira linha</h3><p>Estrutura ampla para conduzir cada fase da reabilitação.</p></article>
+        <article class="card reveal" style="--d:.24s"><div class="card__ico"><svg class="ico"><use href="#i-heart"/></svg></div><h3>Acompanhamento próximo</h3><p>Você sabe o objetivo de cada etapa e vê a sua evolução.</p></article>
+      </div>
     </div>
   </div>
 </section>
@@ -726,6 +807,11 @@ dialog.lightbox::backdrop{background:rgba(5,14,18,.78);backdrop-filter:blur(4px)
 <section class="sec sec--dark final" id="agendar" aria-labelledby="h-final">
   <svg class="mark-bg" viewBox="0 0 140 90" aria-hidden="true"><use href="#mark"/></svg>
   <div class="wrap">
+    <div class="host reveal">
+      <span class="host__ring" aria-hidden="true"></span>
+      <img src="imgs/jefferson-avatar-2.jpg" width="320" height="320" loading="lazy" alt="Jefferson Lima, fisioterapeuta da FisioGolden">
+    </div>
+    <p class="host__name reveal">Jefferson Lima · Fisioterapeuta</p>
     <h2 id="h-final" class="reveal" style="--d:.06s">Seu próximo passo é uma <span class="em">boa avaliação</span></h2>
     <p class="final__lead reveal" style="--d:.12s">Sem pressa e sem protocolo pronto. Você conta o seu caso e sai sabendo o caminho.</p>
     <ul class="include reveal" style="--d:.18s">
@@ -851,6 +937,31 @@ dialog.lightbox::backdrop{background:rgba(5,14,18,.78);backdrop-filter:blur(4px)
   }
   new IntersectionObserver(function(es){ heroGone = !es[0].isIntersecting && es[0].boundingClientRect.top < 0; stickyState(); }, {threshold:0}).observe(hero);
   new IntersectionObserver(function(es){ inFinal = es[0].isIntersecting; stickyState(); }, {threshold:.25}).observe(final);
+
+  /* ---- retrato vivo do hero: alterna as fotos só com o hero na tela ---- */
+  var heroPhoto = $('#heroPhoto');
+  if(heroPhoto && !reduce){
+    var shots = $$('img', heroPhoto), cur = 0, heroOn = true;
+    new IntersectionObserver(function(es){ heroOn = es[0].isIntersecting; }).observe(heroPhoto);
+    setInterval(function(){
+      if(document.hidden || !heroOn) return;
+      var prev = shots[cur];
+      prev.classList.add('was-on'); prev.classList.remove('is-on');
+      setTimeout(function(){ prev.classList.remove('was-on'); }, 1700);
+      cur = (cur + 1) % shots.length;
+      shots[cur].classList.add('is-on');
+    }, 5200);
+  }
+
+  /* ---- balão "Oi, eu sou o Jefferson": aparece, "digita" e mostra o texto ---- */
+  var hello = $('.hello');
+  if(hello){
+    if(reduce){ hello.classList.add('is-shown','is-typed'); }
+    else {
+      setTimeout(function(){ hello.classList.add('is-shown'); }, 900);
+      setTimeout(function(){ hello.classList.add('is-typed'); }, 2400);
+    }
+  }
 
   /* ---- carrossel infinito de avaliações ---- */
   var view = $('#carView'), track = $('#carTrack');
